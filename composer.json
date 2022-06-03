@@ -1,0 +1,19 @@
+{
+    "name": "yoonlight/php-ast",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "yoonlight",
+            "email": "yoonlight12@gmail.com"
+        }
+    ],
+    "require": {
+        "corneltek/cliframework": "4.1.x-dev",
+        "nikic/php-parser": "4.13"
+    }
+}
