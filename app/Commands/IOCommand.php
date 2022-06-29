@@ -14,7 +14,6 @@ class IOCommand extends Command
 
     public function execute($input)
     {
-        $this->getLogger()->writeln($input);
         $file = fopen($input, "r");
         if ($file == false) {
             echo "Error in opening new file";

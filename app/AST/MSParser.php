@@ -88,7 +88,7 @@ class MSParser
         $currentSourceAncestorIndex = count($sourceStack) - 1;
         $currentTargetAncestorIndex = count($targetStack) - 1;
 
-        while ($currentSourceAncestorIndex >= 0 && $currentTargetAncestorIndex >= 0 && $sourceStack[$currentSourceAncestorIndex] == $targetStack[$currentTargetAncestorIndex]) {
+        while ($currentSourceAncestorIndex >= 0 && $currentTargetAncestorIndex >= 0 && $sourceStack[$currentSourceAncestorIndex] === $targetStack[$currentTargetAncestorIndex]) {
             $commonPrefix++;
             $currentSourceAncestorIndex--;
             $currentTargetAncestorIndex--;
