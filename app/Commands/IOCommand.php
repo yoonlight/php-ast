@@ -3,7 +3,7 @@
 namespace App\Commands;
 
 use CLIFramework\Command;
-use App\AST\ASTParser;
+use App\AST\MSParser;
 
 class IOCommand extends Command
 {
@@ -17,15 +17,13 @@ class IOCommand extends Command
         $this->getLogger()->writeln($input);
         $file = fopen($input, "r");
         if ($file == false) {
-            echo ("Error in opening new file");
+            echo "Error in opening new file";
             exit();
         }
         $filesize = filesize($input);
         $code = fread($file, $filesize);
-        // echo $code;
-
-        $parser = new ASTParser;
-        $parser->execute($code);
+        $msParser = new MSParser;
+        $msParser->extractFeatures($code);
     }
 
     public function arguments($args)
