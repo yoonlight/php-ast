@@ -22,6 +22,6 @@ class ProgramFeatures
         $func = function ($feature) {
             return $feature->toString();
         };
-        return implode("\n", array_map($func, $this->features));
+        return " ".implode(" ", array_map($func, $this->features));
     }
 }
