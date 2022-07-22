@@ -4,6 +4,7 @@ namespace App\Commands;
 
 use CLIFramework\Command;
 use App\AST\MSParser;
+use Exception;
 
 class IOCommand extends Command
 {
@@ -16,8 +17,7 @@ class IOCommand extends Command
     {
         $file = fopen($input, "r");
         if ($file == false) {
-            echo "Error in opening new file";
-            exit();
+            throw new Exception("Error in opening new file");
         }
         $filesize = filesize($input);
         $code = fread($file, $filesize);
