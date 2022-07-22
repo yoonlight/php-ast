@@ -18,7 +18,7 @@ class ProgramRelation
 
     public function normalizeName(string $token)
     {
-        return trim(preg_replace('/[ \t]+/', '', preg_replace('/\s*$^\s*/m', "", preg_replace("/\r|\n/", "", strtolower($token)))));
+        return trim(preg_replace("/[\"',]/", '', preg_replace('/[ \t]+/', '', preg_replace('/\s*$^\s*/m', "", preg_replace("/\r\n|\r|\n/", "", strtolower($token))))));
     }
 
     public function toString()
